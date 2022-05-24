@@ -2,6 +2,7 @@ package com.cg.vaccination.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -36,10 +37,10 @@ public class MemberStatus {
 	private LocalDate dose1date;
 	private LocalDate dose2date;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.MERGE)
 	private Member member;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name= "mobile_reg_no")
 	private VaccineRegistration registration;
 

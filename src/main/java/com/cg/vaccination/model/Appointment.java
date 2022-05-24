@@ -40,6 +40,7 @@ public class Appointment {
 	@OneToOne
 	@JoinColumn(name = "member_id")
 	private MemberStatus memberStatus;
+	
 	@OneToOne
 	@JoinColumn (name = "center_code")
 	private VaccinationCenter vaccinationCenter;
